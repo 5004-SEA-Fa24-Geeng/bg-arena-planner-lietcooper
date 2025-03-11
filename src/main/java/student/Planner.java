@@ -1,7 +1,6 @@
 package student;
 
 
-import java.util.Collections;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.stream.Collectors;
@@ -88,11 +87,10 @@ public class Planner implements IPlanner {
         int num;  // temporary num
         switch (col) {
             case NAME:
-                st = game.getName().toLowerCase();
-                str = str.toLowerCase();
+                st = game.getName();;
                 return switch (op) {
                     case EQUALS -> st.equalsIgnoreCase(str);
-                    case CONTAINS -> st.contains(str);
+                    case CONTAINS -> st.toLowerCase().contains(str.toLowerCase());
                     case NOT_EQUALS -> !st.equalsIgnoreCase(str);
                     case GREATER_THAN -> st.compareTo(str) > 0;
                     case GREATER_THAN_EQUALS -> st.compareTo(str) >= 0;

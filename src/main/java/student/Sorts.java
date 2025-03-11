@@ -6,6 +6,14 @@ import java.util.Comparator;
  * A class used as comparator for sorting by game columns.
  */
 public class Sorts {
+
+    /**
+     * Private constructor preventing instansiation.
+     */
+    private Sorts () {
+
+    }
+
     /**
      * The static method for sorting by game columns.
      * @param col the column of game
