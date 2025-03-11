@@ -87,10 +87,11 @@ public class Planner implements IPlanner {
         int num;  // temporary num
         switch (col) {
             case NAME:
-                st = game.getName();;
+                st = game.getName().toLowerCase();
+                str = str.toLowerCase();
                 return switch (op) {
                     case EQUALS -> st.equalsIgnoreCase(str);
-                    case CONTAINS -> st.toLowerCase().contains(str.toLowerCase());
+                    case CONTAINS -> st.contains(str);
                     case NOT_EQUALS -> !st.equalsIgnoreCase(str);
                     case GREATER_THAN -> st.compareTo(str) > 0;
                     case GREATER_THAN_EQUALS -> st.compareTo(str) >= 0;

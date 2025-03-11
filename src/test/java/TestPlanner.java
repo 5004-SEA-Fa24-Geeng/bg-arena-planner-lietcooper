@@ -64,6 +64,7 @@ public class TestPlanner {
         IPlanner planner = new Planner(games);
         List<BoardGame> filtered = planner.filter("name ~= Go").toList();
         assertEquals(4, filtered.size());
+        System.out.println(filtered);
     }
 
     @Test

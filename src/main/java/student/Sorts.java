@@ -5,12 +5,12 @@ import java.util.Comparator;
 /**
  * A class used as comparator for sorting by game columns.
  */
-public class Sorts {
+public final class Sorts {
 
     /**
      * Private constructor preventing instansiation.
      */
-    private Sorts () {
+    private Sorts() {
 
     }
 
@@ -23,7 +23,7 @@ public class Sorts {
     public static Comparator<BoardGame> sortByCol(GameData col, boolean asc) {
         return switch (col) {
             case NAME -> (o1, o2) -> {
-                int compare = o1.getName().compareTo(o2.getName());
+                int compare = o1.getName().toLowerCase().compareTo(o2.getName().toLowerCase());
                 return asc ? compare : -compare;
             };
             case RATING -> (o1, o2) -> {
