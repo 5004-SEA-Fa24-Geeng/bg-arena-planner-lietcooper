@@ -223,7 +223,6 @@ public class ConsoleApp {
                     String filename = remainder().trim();
                     if (filename.isEmpty()) {
                         filename = DEFAULT_FILENAME;
-                        break;
                     }
                     gameList.saveGame(filename);
                     break;

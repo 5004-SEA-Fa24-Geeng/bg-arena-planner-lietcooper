@@ -11,7 +11,7 @@ import java.util.stream.Stream;
  * Planner.java. You can assume the constructor of Planner.java takes in a Set<BoardGame> as a
  * parameter. This represents the total board game collection.
  * 
- * An important note, while most of methods return streams, each method builds on each other / is
+ * An important note, while most of the methods return streams, each method builds on each other / is
  * progressive. As such if filter by minPlayers, then filter by maxPlayers, the maxPlayers filter
  * should be applied to the results of the minPlayers filter unless reset is called between.
  * 
@@ -20,7 +20,7 @@ public interface IPlanner {
 
     /**
      * 
-     * Assumes the results are sorted in ascending order, and that the steam is sorted by the name
+     * Assumes the results are sorted in ascending order, and that the stream is sorted by the name
      * of the board game (GameData.NAME).
      * 
      * @param filter The filter to apply to the board games.
@@ -59,7 +59,7 @@ public interface IPlanner {
      * != : not equal to
      * 
      * ~= : contains the text
-     * 
+     *
      * The left side of the filter describes the column to filter on. The right side of the filter
      * describes the value to filter on.
      * 
