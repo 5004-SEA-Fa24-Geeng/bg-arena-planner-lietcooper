@@ -57,20 +57,20 @@ public class Planner implements IPlanner {
             return toFilter;
         }
 
-        filterStr = filterStr.replaceAll(" ", "");
         String[] parts = filterStr.split(operator.getOperator());
         if (parts.length != 2) {
             return toFilter;
         }
-
+        String gameData = parts[0].trim();
+        String str = parts[1].trim();
         GameData col;
         try {
-            col = GameData.fromString(parts[0]);
+            col = GameData.fromString(gameData);
         } catch (IllegalArgumentException e) {
             return toFilter;
         }
 
-        return toFilter.filter(o -> select(o, col, operator, parts[1]));
+        return toFilter.filter(o -> select(o, col, operator, str));
     }
 
     /**
